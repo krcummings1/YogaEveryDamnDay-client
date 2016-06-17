@@ -3,3 +3,4 @@ css/styles.css
 lib/bower_components
 .sass-cache
 .suo
+images/*
