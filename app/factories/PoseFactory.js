@@ -1,23 +1,18 @@
 "use strict";
 
-YEDD.factory("PoseFactory", function ($q, $http) {
+YEDD.factory("PoseFactory", function ($http) {
+  return () =>
+    // Return a promise for our async XHR
+    new Promise((resolve, reject) => {
 
-  let allPoses = [];
-
-  return function () {
-
-    return $q((resolve, reject) => {
       $http
-        .get(`http://localhost:5000/api/Pose/GetAll`)
+        .get('http://localhost:5000/api/Pose')        
         .success(
-          poses => {
-            console.log("all poses", poses);
-            allPoses = poses;
-            resolve(allPoses)
-          },  
+          poseCollection => {
+            resolve(poseCollection);
+          },
           error => reject(error)
-        )
+        );
     });
-  }
 
 });

@@ -11,9 +11,9 @@ YEDD.config(['$routeProvider',
       templateUrl: 'partials/main.html',
       controller: 'MainController'
     })
-    .when('/poses', {
+    .when('/pose', {
       templateUrl: 'partials/pose-search.html',
-      controller: 'PoseSearchController'
+      controller: 'PoseController'
     })
     .when('/detail', {
       templateUrl: 'partials/detail.html',
