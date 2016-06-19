@@ -1,46 +1,18 @@
-// "use strict";
+"use strict";
 
-// YEDD.factory("PoseFactory", function ($http) {
+YEDD.factory("PoseFactory", function ($http) {
+  return () =>
+    // Return a promise for our async XHR
+    new Promise((resolve, reject) => {
 
-//   // return {
+      $http
+        .get('http://localhost:5000/api/Pose')        
+        .success(
+          poseCollection => {
+            resolve(poseCollection);
+          },
+          error => reject(error)
+        );
+    });
 
-//     function getPoses () {
-
-//       return new Promise(function (resolve, reject){
-//         $http.get(`http://localhost:5000/api/Pose/`)
-//           .success(
-//             poses => resolve(poses),        
-//             error => reject(error)
-//           )
-//       });
-//     }
-
-//   // } // closes intial return
-// });
-
-
-
-
-// // "use strict";
-
-// // YEDD.factory("PoseFactory", function ($q, $http) {
-
-// //   let allPoses = [];
-
-// //   return function () {
-
-// //     return $q((resolve, reject) => {
-// //       $http
-// //         .get(`http://localhost:5000/api/Pose/`)
-// //         .success(
-// //           poses => {
-// //             console.log("all poses", poses);
-// //             allPoses = poses;
-// //             resolve(allPoses)
-// //           },  
-// //           error => reject(error)
-// //         )
-// //     });
-// //   }
-
-// // });
+});
