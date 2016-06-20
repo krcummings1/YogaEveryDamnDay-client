@@ -1,6 +1,7 @@
 "use strict";
 
 YEDD.factory("PoseFactory", function ($http) {
+
   return () =>
     // Return a promise for our async XHR
     new Promise((resolve, reject) => {
