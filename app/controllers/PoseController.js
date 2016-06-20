@@ -3,26 +3,50 @@
 YEDD.controller('PoseController', [
   '$scope',
   '$http', 
+  '$route',
   'PoseFactory',
+  '$timeout',
 
-  function ($scope, $http, PoseFactory) {
+  function ($scope, $http, $route, PoseFactory, $timeout) {
 
-    $scope.poses = [];
+    // $(document).ready(function() {
+    // $scope.posesArray = [];
+
+    // $scope.pose = {
+    //   sanskrit: "",
+    //   commonName: ""
+    // }
 
     PoseFactory().then(
       // Handle resolve() from the promise
       poseCollection => {
-        Object.keys(poseCollection).forEach(key => {
-          poseCollection[key].id = key;
-          $scope.poses.push(poseCollection[key]);
-      console.log("poses", poseCollection);
-        });
-        $scope.$apply();
-      },
-      // Handle reject() from the promise
-      err => console.log(err)
-    );
+        console.log("resolve", poseCollection);
+        // $scope.poses.push(poseCollection);
 
+
+          // console.log("pose collection", poseCollection);
+           // $scope.posesArray = poseCollection;
+           $scope.posesArray = poseCollection;
+          console.log("poses array", $scope.posesArray);
+          $timeout();
+   
+// console.log("pose", $scope.poses[0]);
+console.log("poseId", $scope.posesArray[0].PoseId);
+// console.log("pose", favePose[0].sanskrit);
+
+
+        }, 
+        error => console.log("??", error)
+      );
+  // });
+    //     $scope.$apply();
+    //   },
+    //   // Handle reject() from the promise
+    //   err => console.log(err)
+    // );
+
+    // $scope.poseArray = PoseFactory(poseCollection);
+    // console.log("poseArray", poseArray);
 
   }
 
