@@ -1,27 +1,31 @@
-<!-- <div>
+<div>
 
-    <div class="dropdown" id="pose-dropdown">
+  <div class="dropdown" id="pose-dropdown">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       Poses
       <span class="caret"></span>
     </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <ul  class="dropdown-menu" aria-labelledby="dropdownMenu1">
 
 
-      <li><a href="#">Action</a></li>
-      <li><a href="#">Another action</a></li>
-      <li><a href="#">Something else here</a></li> -->
+      <li ng-repeat="pose in posesArray"><a ng-click="seePoseDetails(pose.PoseId)">{{ pose.Sanskrit }}  |  {{ pose.CommonName }}</a></li>
 
-<!--       <li role="separator" class="divider"></li>
-      <li><a href="#">Separated link</a></li> -->
-
-   <!--  </ul>
+    </ul>
   </div>
- -->
-  pose
-    <div ng-repeat="pose in posesArray">
-    pose in repeat {{pose.Sanskrit}}
-    </div>
-    pose2
 
-<!-- </div> -->
+  <div>
+    <div ng-if="basePose" class="base-pose">
+      <div>{{ basePose.Sanskrit }} </div>
+      <div>{{ basePose.CommonName }} </div>
+      <div><img ng-src="{{basePose.Image}}"></div>
+    </div>
+
+    <div ng-if="basePose" class="prep-poses"> Prep Poses: </div>
+    <div ng-repeat="prep in prepPoses">
+      <div>Sanskrit: {{ prep.Sanskrit }}</div>
+      <div>Pose Name: {{ prep.CommonName }}</div>
+      <div><img ng-src="{{prep.Image}}"></div>
+    </div>
+  </div>
+
+</div>
