@@ -3,15 +3,13 @@
 YEDD.controller('MainController'
   [
     "$scope",
-    "$PoseFactory",
     "$route",
 
     function ($scope, $PoseFactory, $route) {
 
-      $scope.allPoses = PoseFactory();
-      $scope.pose = {};
-
-      console.log("all poses", allPoses);
+      $('#myStateButton').on('click', function () {
+    $(this).button('complete') // button text will be "finished!"
+  })
 
 
     }

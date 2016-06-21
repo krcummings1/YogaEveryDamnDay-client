@@ -9,46 +9,45 @@ YEDD.controller('PoseController', [
 
   function ($scope, $http, $route, PoseFactory, $timeout) {
 
-    // $(document).ready(function() {
-    // $scope.posesArray = [];
-
-    // $scope.pose = {
-    //   sanskrit: "",
-    //   commonName: ""
-    // }
-
     PoseFactory().then(
       // Handle resolve() from the promise
       poseCollection => {
         console.log("resolve", poseCollection);
-        // $scope.poses.push(poseCollection);
 
-
-          // console.log("pose collection", poseCollection);
-           // $scope.posesArray = poseCollection;
-           $scope.posesArray = poseCollection;
-          console.log("poses array", $scope.posesArray);
-          $timeout();
+        $scope.posesArray = poseCollection;
+        console.log("poses array", $scope.posesArray);
+        $timeout();
    
-// console.log("pose", $scope.poses[0]);
-console.log("poseId", $scope.posesArray[0].PoseId);
-// console.log("pose", favePose[0].sanskrit);
+        console.log("poseId", $scope.posesArray[0].PoseId);
+      }, 
+      error => console.log("??", error)
+    );
 
+    $scope.seePoseDetails = function(id) {
+      $http({
+        method: "GET",
+        url: `http://localhost:5000/api/Pose/${id}`
+      })
+      .then(
+        pose => {
+          console.log("base pose", pose.data);
 
-        }, 
-        error => console.log("??", error)
+          $scope.basePose = pose.data[0];
+          $scope.prepPoses = pose.data[0].PrepPoses;
+
+          console.log("$scope.basePose", $scope.basePose);
+        }
+        // () => console.log("Toy deleted"),
+        // () => console.log("Toy not deleted")
+        // error => console.log("???", error)
       );
-  // });
-    //     $scope.$apply();
-    //   },
-    //   // Handle reject() from the promise
-    //   err => console.log(err)
-    // );
 
-    // $scope.poseArray = PoseFactory(poseCollection);
-    // console.log("poseArray", poseArray);
+    
+    } // closes seePoseDetails
 
-  }
+
+
+  } // closes main function
 
 ]);
 

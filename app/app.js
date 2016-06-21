@@ -15,10 +15,10 @@ YEDD.config(['$routeProvider',
       templateUrl: 'partials/pose-search.html',
       controller: 'PoseController'
     })
-    .when('/detail', {
-      templateUrl: 'partials/detail.html',
-      controller: 'DetailController'
-    })
+    // .when('/pose-detail', {
+    //   templateUrl: 'partials/pose-detail.html',
+    //   controller: 'PoseDetailController'
+    // })
     .otherwise('/');
   }
 ]);
