@@ -1,17 +1,7 @@
 #main-background { 
-  background: no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  max-width: 75%;
+  display: block;
+  margin: 0 auto;
+  padding: 10px 0px;
 }
 
-/*#main-background { 
-  background: url("http://i1376.photobucket.com/albums/ah29/kayleecummings/YogaApp/driftwood-beach-rachel_zps6pd3ijbr.jpg") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-*/

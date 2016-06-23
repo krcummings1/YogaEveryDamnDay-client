@@ -1,4 +1,12 @@
-<div>
+<div class="container">
+
+<button type="button" class="btn btn-primary mainMenuButton button">
+  Home
+</button>
+
+  <div>
+    <p>Select a pose from the menu below to see a list of preparatory poses that will help you build the strength and flexibility needed in order to achieve your selected pose.</p>
+  </div>
 
   <div class="dropdown" id="pose-dropdown">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -13,19 +21,26 @@
     </ul>
   </div>
 
-  <div>
+  <div class="poses">
+
     <div ng-if="basePose" class="base-pose">
       <div>{{ basePose.Sanskrit }} </div>
       <div>{{ basePose.CommonName }} </div>
       <div><img ng-src="{{basePose.Image}}"></div>
     </div>
 
-    <div ng-if="basePose" class="prep-poses"> Prep Poses: </div>
+  <div ng-if="prepPoses.length" class="prep-poses"> 
+    <p>Prep Poses:</p> 
     <div ng-repeat="prep in prepPoses">
-      <div>Sanskrit: {{ prep.Sanskrit }}</div>
-      <div>Pose Name: {{ prep.CommonName }}</div>
-      <div><img ng-src="{{prep.Image}}"></div>
+      <div class="col-sm-4 repeat-poses">
+        <div>Sanskrit: {{ prep.Sanskrit }}</div>
+        <div>Pose Name: {{ prep.CommonName }}</div>
+        <div><img ng-src="{{prep.Image}}"></div>
+      </div>
     </div>
   </div>
 
 </div>
+
+<!-- col-md-6  col-md-offset-3 -->
+<!-- {test: obj.value1 == 'someothervalue'} -->
