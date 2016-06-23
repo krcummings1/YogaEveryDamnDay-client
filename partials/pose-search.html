@@ -1,8 +1,4 @@
-<div class="container">
-
-<button type="button" class="btn btn-primary mainMenuButton button">
-  Home
-</button>
+<section id="about" class="container content-section text-center">
 
   <div>
     <p>Select a pose from the menu below to see a list of preparatory poses that will help you build the strength and flexibility needed in order to achieve your selected pose.</p>
@@ -16,7 +12,9 @@
     <ul  class="dropdown-menu" aria-labelledby="dropdownMenu1">
 
 
-      <li ng-repeat="pose in posesArray"><a ng-click="seePoseDetails(pose.PoseId)">{{ pose.Sanskrit }}  |  {{ pose.CommonName }}</a></li>
+      <li ng-repeat="pose in posesArray">
+        <a ng-click="seePoseDetails(pose.PoseId)">{{ pose.Sanskrit }}  |  {{ pose.CommonName }}</a>
+      </li>
 
     </ul>
   </div>
@@ -24,43 +22,25 @@
   <div class="poses">
 
     <!-- base pose -->
-    <div ng-if="basePose" class="base-pose">
+    <div ng-if="basePose" class="col-sm-8 col-sm-offset-2 base-pose">
       <div>{{ basePose.Sanskrit }} </div>
       <div>{{ basePose.CommonName }} </div>
       <div><img ng-src="{{basePose.Image}}"></div>
     </div>
 
     <!-- prep poses -->
-    <div ng-if="prepPoses.length" class="card col-lg-12 col-md-8 prep-poses"> 
-      <div class="inner row">
-        <h2>Prep Poses:</h2> 
+    <div ng-if="prepPoses.length" class="prep-poses"> 
 
-        <div class="col-lg-6" ng-repeat="prep in prepPoses">
+        <p class="prepPoseHeader">Prep Poses:</p> 
+
+        <div class="card col-sm-6" ng-repeat="prep in prepPoses">
           <!-- <div class="col-sm-6 repeat-poses"> -->
           <div>Sanskrit: {{ prep.Sanskrit }}</div>
           <div>Pose Name: {{ prep.CommonName }}</div>
           <img class="yoga-pic" ng-src="{{prep.Image}}">
           <!-- </div> -->
         </div>
-
-      </div> <!-- closes inner row -->
-    </div> <!-- closes ng-if prepPoses div -->
-
+    </div>
+     <!-- closes ng-if prepPoses div -->
   </div> <!-- closes entire poses div -->
-</div><!--/container-->
-
-<!-- <div class="bestof card col-lg-12 col-md-8">
-  <div class="inner row">
-      <h1>Best of {{dest.name}}</h1>
-
-      <div class="col-lg-6" ng-repeat="best in bestHotels | limitTo: 2 track by $index">
-              <img class="best_thumbnail" ng-src="{{best.thumbnail}}">
-              <p>{{best.desc}}</p>
-      </div> 
-
-  </div> inner
-</div> bestof -->
-
-
-<!-- col-md-6  col-md-offset-3 -->
-<!-- {test: obj.value1 == 'someothervalue'} -->
+</section>

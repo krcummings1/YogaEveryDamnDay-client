@@ -62,16 +62,6 @@ YEDD.controller('PoseController', [
     
     } // closes seePoseDetails
 
-
-
-      $('.mainMenuButton').on('click', function () {
-          $location.path("/")
-          $route.reload();
-
-      })
-
-
-
   } // closes main function
 
 ]);

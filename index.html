@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="css/main.css">
 
   <!-- Custom Fonts -->
-  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
@@ -22,7 +22,7 @@
 
 <body ng-app="YogaEveryDamnDay">
   
-  <nav ng-include="partials/header.html"></nav>
+  <nav ng-include="'partials/header.html'"></nav>
 
   <div ng-view></div>
   
@@ -35,6 +35,7 @@
 
   <script src="app/app.js"></script>
   <script src="app/factories/PoseFactory.js"></script>
+  <script src="app/controllers/HeaderController.js"></script>
   <script src="app/controllers/MainController.js"></script>
   <script src="app/controllers/PoseController.js"></script>
 
