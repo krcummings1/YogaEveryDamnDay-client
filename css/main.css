@@ -5,6 +5,9 @@
   padding: 10px 0px;
 }
 
+.dropdown-menu {
+left: calc(50% - 167px);
+}
 /*!
  * Start Bootstrap - Grayscale Bootstrap Theme (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
@@ -154,7 +157,7 @@ a:focus {
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
+    background: url("../images/driftwood-beach-rachel.jpg") no-repeat bottom center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -388,4 +391,8 @@ body {
   position: relative;
   bottom: 0;
   display: inline-block;
+}
+
+.base-pose {
+  padding-top: 30px;
 }
