@@ -44,10 +44,10 @@ YEDD.controller('PoseController', [
           //   console.log("hello");
           // }
 
-          // var moreThanOnePrepPose;
+          // $scope.columnClass = "col-sm-4";
 
           // if ($scope.prepPoses.length > 1) {
-          //   $scope.moreThanOnePrepPose === 'true';
+          //   $scope.columnClass === 'true';
           //   console.log("true, more than 1 prep pose", $scope.moreThanOnePrepPose)
           // } else {
           //   $scope.moreThanOnePrepPose === 'false';

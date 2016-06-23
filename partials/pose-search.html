@@ -23,24 +23,44 @@
 
   <div class="poses">
 
+    <!-- base pose -->
     <div ng-if="basePose" class="base-pose">
       <div>{{ basePose.Sanskrit }} </div>
       <div>{{ basePose.CommonName }} </div>
       <div><img ng-src="{{basePose.Image}}"></div>
     </div>
 
-  <div ng-if="prepPoses.length" class="prep-poses"> 
-    <p>Prep Poses:</p> 
-    <div ng-repeat="prep in prepPoses">
-      <div class="col-sm-4 repeat-poses">
-        <div>Sanskrit: {{ prep.Sanskrit }}</div>
-        <div>Pose Name: {{ prep.CommonName }}</div>
-        <div><img ng-src="{{prep.Image}}"></div>
-      </div>
-    </div>
-  </div>
+    <!-- prep poses -->
+    <div ng-if="prepPoses.length" class="card col-lg-12 col-md-8 prep-poses"> 
+      <div class="inner row">
+        <h2>Prep Poses:</h2> 
 
-</div>
+        <div class="col-lg-6" ng-repeat="prep in prepPoses">
+          <!-- <div class="col-sm-6 repeat-poses"> -->
+          <div>Sanskrit: {{ prep.Sanskrit }}</div>
+          <div>Pose Name: {{ prep.CommonName }}</div>
+          <img class="yoga-pic" ng-src="{{prep.Image}}">
+          <!-- </div> -->
+        </div>
+
+      </div> <!-- closes inner row -->
+    </div> <!-- closes ng-if prepPoses div -->
+
+  </div> <!-- closes entire poses div -->
+</div><!--/container-->
+
+<!-- <div class="bestof card col-lg-12 col-md-8">
+  <div class="inner row">
+      <h1>Best of {{dest.name}}</h1>
+
+      <div class="col-lg-6" ng-repeat="best in bestHotels | limitTo: 2 track by $index">
+              <img class="best_thumbnail" ng-src="{{best.thumbnail}}">
+              <p>{{best.desc}}</p>
+      </div> 
+
+  </div> inner
+</div> bestof -->
+
 
 <!-- col-md-6  col-md-offset-3 -->
 <!-- {test: obj.value1 == 'someothervalue'} -->
