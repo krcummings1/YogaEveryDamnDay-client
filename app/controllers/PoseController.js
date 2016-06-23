@@ -6,8 +6,9 @@ YEDD.controller('PoseController', [
   '$route',
   'PoseFactory',
   '$timeout',
+  '$location',
 
-  function ($scope, $http, $route, PoseFactory, $timeout) {
+  function ($scope, $http, $route, PoseFactory, $timeout, $location) {
 
     PoseFactory().then(
       // Handle resolve() from the promise
@@ -35,11 +36,27 @@ YEDD.controller('PoseController', [
           $scope.basePose = pose.data[0];
           $scope.prepPoses = pose.data[0].PrepPoses;
 
+          console.log("prepPoses", $scope.prepPoses);
+
+          // if ($scope.prepPoses.length <= 1) {
+          //   $("div").removeClass(".col-sm-4");
+          //   $("div").addClass("col-md-6  col-md-offset-3");
+          //   console.log("hello");
+          // }
+
+          // var moreThanOnePrepPose;
+
+          // if ($scope.prepPoses.length > 1) {
+          //   $scope.moreThanOnePrepPose === 'true';
+          //   console.log("true, more than 1 prep pose", $scope.moreThanOnePrepPose)
+          // } else {
+          //   $scope.moreThanOnePrepPose === 'false';
+          //   console.log("false, only 1 prep pose", $scope.moreThanOnePrepPose);
+          // }
+
           console.log("$scope.basePose", $scope.basePose);
         }
-        // () => console.log("Toy deleted"),
-        // () => console.log("Toy not deleted")
-        // error => console.log("???", error)
+
       );
 
     
@@ -47,36 +64,16 @@ YEDD.controller('PoseController', [
 
 
 
+      $('.mainMenuButton').on('click', function () {
+          $location.path("/")
+          $route.reload();
+
+      })
+
+
+
   } // closes main function
 
 ]);
 
-// "use strict";
-
-// YEDD.controller('PoseController', [
-//   '$scope',
-//   '$http', 
-
-//   function ($scope, $http) {
-//     return () =>
-//     // Return a promise for our async XHR
-//     new Promise((resolve, reject) => {
-
-//     //$scope.poses = [];
-//     //var data;
-
-//     $http
-//       .get('http://localhost:5000/api/Pose')
-//       .success(poses => {
-//         resolve(poses);
-//       },
-//         error => reject(error);
-//       });
-//       console.log("poses", poses);
-//       //.success(data => console.log("data", data));
-      
-
-//   }
-
-// ]);
 

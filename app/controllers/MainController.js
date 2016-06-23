@@ -1,17 +1,19 @@
 "use strict";
 
-YEDD.controller('MainController'
+YEDD.controller('MainController',
   [
     "$scope",
+    "$location",
     "$route",
 
-    function ($scope, $PoseFactory, $route) {
+    function ($scope, $location, $route) {
 
-      $('#myStateButton').on('click', function () {
-    $(this).button('complete') // button text will be "finished!"
-  })
+      $('.mainPoseButton').on('click', function () {
+          $location.path("/poses")
+          $route.reload();
 
+      })
 
-    }
+    } // closes main function
 
   ]);

@@ -11,14 +11,10 @@ YEDD.config(['$routeProvider',
       templateUrl: 'partials/main.html',
       controller: 'MainController'
     })
-    .when('/pose', {
+    .when('/poses', {
       templateUrl: 'partials/pose-search.html',
       controller: 'PoseController'
     })
-    // .when('/pose-detail', {
-    //   templateUrl: 'partials/pose-detail.html',
-    //   controller: 'PoseDetailController'
-    // })
     .otherwise('/');
   }
 ]);
