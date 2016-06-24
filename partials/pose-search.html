@@ -1,8 +1,4 @@
-<div class="container">
-
-<button type="button" class="btn btn-primary mainMenuButton button">
-  Home
-</button>
+<section id="about" class="container content-section text-center">
 
   <div>
     <p>Select a pose from the menu below to see a list of preparatory poses that will help you build the strength and flexibility needed in order to achieve your selected pose.</p>
@@ -14,33 +10,34 @@
       <span class="caret"></span>
     </button>
     <ul  class="dropdown-menu" aria-labelledby="dropdownMenu1">
-
-
-      <li ng-repeat="pose in posesArray"><a ng-click="seePoseDetails(pose.PoseId)">{{ pose.Sanskrit }}  |  {{ pose.CommonName }}</a></li>
-
+      <li ng-repeat="pose in posesArray">
+        <a ng-click="seePoseDetails(pose.PoseId)">{{ pose.Sanskrit }}  |  {{ pose.CommonName }}</a>
+      </li>
     </ul>
   </div>
 
   <div class="poses">
 
-    <div ng-if="basePose" class="base-pose">
+    <!-- base pose -->
+    <div ng-if="basePose" class="col-sm-8 col-sm-offset-2 base-pose pose-card">
       <div>{{ basePose.Sanskrit }} </div>
       <div>{{ basePose.CommonName }} </div>
       <div><img ng-src="{{basePose.Image}}"></div>
     </div>
 
-  <div ng-if="prepPoses.length" class="prep-poses"> 
-    <p>Prep Poses:</p> 
-    <div ng-repeat="prep in prepPoses">
-      <div class="col-sm-4 repeat-poses">
-        <div>Sanskrit: {{ prep.Sanskrit }}</div>
-        <div>Pose Name: {{ prep.CommonName }}</div>
-        <div><img ng-src="{{prep.Image}}"></div>
-      </div>
+    <!-- prep poses -->
+    <div ng-if="prepPoses.length" class="prep-poses"> 
+
+        <p class="prepPoseHeader">Prep Poses:</p> 
+
+        <div class="card col-md-6 pose-card" ng-repeat="prep in prepPoses">
+          <!-- <div class="col-sm-6 repeat-poses"> -->
+          <div>{{ prep.Sanskrit }}</div>
+          <div>{{ prep.CommonName }}</div>
+          <img class="yoga-pic" ng-src="{{prep.Image}}">
+          <!-- </div> -->
+        </div>
     </div>
-  </div>
-
-</div>
-
-<!-- col-md-6  col-md-offset-3 -->
-<!-- {test: obj.value1 == 'someothervalue'} -->
+     <!-- closes ng-if prepPoses div -->
+  </div> <!-- closes entire poses div -->
+</section>

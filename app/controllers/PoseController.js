@@ -38,22 +38,6 @@ YEDD.controller('PoseController', [
 
           console.log("prepPoses", $scope.prepPoses);
 
-          // if ($scope.prepPoses.length <= 1) {
-          //   $("div").removeClass(".col-sm-4");
-          //   $("div").addClass("col-md-6  col-md-offset-3");
-          //   console.log("hello");
-          // }
-
-          // var moreThanOnePrepPose;
-
-          // if ($scope.prepPoses.length > 1) {
-          //   $scope.moreThanOnePrepPose === 'true';
-          //   console.log("true, more than 1 prep pose", $scope.moreThanOnePrepPose)
-          // } else {
-          //   $scope.moreThanOnePrepPose === 'false';
-          //   console.log("false, only 1 prep pose", $scope.moreThanOnePrepPose);
-          // }
-
           console.log("$scope.basePose", $scope.basePose);
         }
 
@@ -61,16 +45,6 @@ YEDD.controller('PoseController', [
 
     
     } // closes seePoseDetails
-
-
-
-      $('.mainMenuButton').on('click', function () {
-          $location.path("/")
-          $route.reload();
-
-      })
-
-
 
   } // closes main function
 
