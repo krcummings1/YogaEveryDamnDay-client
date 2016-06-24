@@ -38,22 +38,6 @@ YEDD.controller('PoseController', [
 
           console.log("prepPoses", $scope.prepPoses);
 
-          // if ($scope.prepPoses.length <= 1) {
-          //   $("div").removeClass(".col-sm-4");
-          //   $("div").addClass("col-md-6  col-md-offset-3");
-          //   console.log("hello");
-          // }
-
-          // $scope.columnClass = "col-sm-4";
-
-          // if ($scope.prepPoses.length > 1) {
-          //   $scope.columnClass === 'true';
-          //   console.log("true, more than 1 prep pose", $scope.moreThanOnePrepPose)
-          // } else {
-          //   $scope.moreThanOnePrepPose === 'false';
-          //   console.log("false, only 1 prep pose", $scope.moreThanOnePrepPose);
-          // }
-
           console.log("$scope.basePose", $scope.basePose);
         }
 

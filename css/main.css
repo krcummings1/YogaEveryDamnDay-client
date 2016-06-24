@@ -1,10 +1,3 @@
-/*#main-background { 
-  max-width: 75%;
-  display: block;
-  margin: 0 auto;
-  padding: 10px 0px;
-}*/
-
 .dropdown-menu {
 left: calc(50% - 167px);
 }
@@ -68,7 +61,6 @@ a:focus {
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    /*background-color: #000;*/
 }
 
 .navbar-custom .navbar-brand {
@@ -87,10 +79,6 @@ a:focus {
 .navbar-custom .navbar-brand .navbar-toggle:focus,
 .navbar-custom .navbar-brand .navbar-toggle:active {
     outline: 0;
-}
-
-.navbar-custom a {
-    /*color: #fff;*/
 }
 
 .navbar-custom .nav li a {
@@ -144,37 +132,13 @@ a:focus {
     display: table;
     width: 100%;
     height: auto;
-    /*padding: 100px 0;*/
     text-align: center;
-    /*color: #fff;*/
 }
 
 .main {
-/*    display: table;
-    width: 100%;
-    height: auto;
-    padding: 100px 0;
-    text-align: center;
-    color: #fff;*/
-    /*background-image: url('../images/driftwood-beach-rachel.jpg');*/
     margin-top: 90px;
-    /*height: 1196px;*/                 
     background-repeat: no-repeat;
-    overflow: visible;
-
-
-    /*background: no-repeat bottom center scroll;*/
-    /*background-color: #000;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-
-    /*background-image: url('../images/driftwood-beach-rachel.jpg');
-    background-size:     cover;                     
-    background-repeat:   no-repeat;
-    background-position: center center;
-    color: white; */  
+    overflow: visible; 
 }
 
 .main-container {
@@ -198,6 +162,11 @@ a:focus {
   padding: 100px 0;
   text-align: center;
   color: white;
+}
+
+.intro-text {
+  text-shadow: 
+  2px 2px 0px #000;
 }
 
 .intro .intro-body {
@@ -345,4 +314,8 @@ body {
 
 .base-pose {
   padding-top: 30px;
+}
+
+.yoga-pic {
+  width: 450px;
 }
