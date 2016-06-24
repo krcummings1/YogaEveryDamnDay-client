@@ -22,7 +22,7 @@
   <div class="poses">
 
     <!-- base pose -->
-    <div ng-if="basePose" class="col-sm-8 col-sm-offset-2 base-pose">
+    <div ng-if="basePose" class="col-sm-8 col-sm-offset-2 base-pose pose-card">
       <div>{{ basePose.Sanskrit }} </div>
       <div>{{ basePose.CommonName }} </div>
       <div><img ng-src="{{basePose.Image}}"></div>
@@ -33,7 +33,7 @@
 
         <p class="prepPoseHeader">Prep Poses:</p> 
 
-        <div class="card col-sm-6" ng-repeat="prep in prepPoses">
+        <div class="card col-md-6 pose-card" ng-repeat="prep in prepPoses">
           <!-- <div class="col-sm-6 repeat-poses"> -->
           <div>{{ prep.Sanskrit }}</div>
           <div>{{ prep.CommonName }}</div>
